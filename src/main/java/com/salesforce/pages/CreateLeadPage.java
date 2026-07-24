@@ -125,4 +125,16 @@ public class CreateLeadPage extends ProjectSpecificMethods {
 		verifyDisplayed(locateElement(Locators.XPATH, "//*[normalize-space()='Mr. Test User']"));
 		reportStep("Verify Lead Name Displayed", "pass");
 	}
+
+public CreateLeadPage typeEmail(String email) {
+		clearAndType(locateElement(Locators.XPATH, "//input[@name='Email']"), email);
+		reportStep("Type Email", "pass");
+		return this;
+	}
+
+public CreateLeadPage selectRatingWarm() {
+		click(locateElement("Warm"));
+		reportStep("Select Rating Warm", "pass");
+		return this;
+	}
 }
